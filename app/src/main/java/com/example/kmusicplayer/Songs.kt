@@ -5,8 +5,10 @@ import android.os.Parcelable
 import java.util.*
 import kotlin.Comparator
 
-class Songs(var songId: Long, var songTitle: String, var artist: String, var songData: String,
-            var dateAdded: Long) : Parcelable{
+class Songs(
+    var songId: Long, var songTitle: String, var artist: String, var songData: String,
+    var dateAdded: Long
+) : Parcelable {
 //    constructor(parcel: Parcel) : this(
 //        parcel.readLong(),
 //        parcel.readString(),
@@ -17,11 +19,11 @@ class Songs(var songId: Long, var songTitle: String, var artist: String, var son
 //    }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-//        parcel.writeLong(songId)
-//        parcel.writeString(songTitle)
-//        parcel.writeString(artist)
-//        parcel.writeString(songData)
-//        parcel.writeLong(dateAdded)
+        parcel.writeLong(songId)
+        parcel.writeString(songTitle)
+        parcel.writeString(artist)
+        parcel.writeString(songData)
+        parcel.writeLong(dateAdded)
     }
 
     override fun describeContents(): Int {
@@ -38,15 +40,15 @@ class Songs(var songId: Long, var songTitle: String, var artist: String, var son
 //        }
 //    }
 
-    object Statified{
-        var nameComparator: Comparator<Songs> = Comparator<Songs>{song1, song2 ->
-            val songOne = song1.songTitle.toUpperCase(Locale.ROOT)
-            val songTwo = song2.songTitle.toUpperCase(Locale.ROOT)
+    object Statified {
+        var nameComparator: Comparator<Songs> = Comparator<Songs> { firstSong, secondSong ->
+            val songOne = firstSong.songTitle.toUpperCase(Locale.ROOT)
+            val songTwo = secondSong.songTitle.toUpperCase(Locale.ROOT)
             songOne.compareTo(songTwo)
         }
-        var dateComparator: Comparator<Songs> = Comparator<Songs>{song1, song2 ->
-            val dateOne = song1.dateAdded.toDouble()
-            val dateTwo = song2.dateAdded.toDouble()
+        var dateComparator: Comparator<Songs> = Comparator<Songs> { firstSong, secondSong ->
+            val dateOne = firstSong.dateAdded.toDouble()
+            val dateTwo = secondSong.dateAdded.toDouble()
             dateOne.compareTo(dateTwo)
         }
     }
