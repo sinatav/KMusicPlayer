@@ -8,16 +8,16 @@ import android.database.sqlite.SQLiteOpenHelper
 import com.example.kmusicplayer.Songs
 
 class KDatabase : SQLiteOpenHelper {
-    var _songList = ArrayList<Songs>()
+    private var _songList = ArrayList<Songs>()
 
     object Description {
-        val DB_Version = 1
-        val DB_Name = "FavoritesDatabase"
-        val tableName = "FavoritesTable"
-        val cID = "SongID"
-        val songTitle = "SongTitle"
-        val songArtist = "SongArtist"
-        val songPath = "SongPath"
+        const val DB_Version = 1
+        const val DB_Name = "FavoritesDatabase"
+        const val tableName = "FavoritesTable"
+        const val cID = "SongID"
+        const val songTitle = "SongTitle"
+        const val songArtist = "SongArtist"
+        const val songPath = "SongPath"
     }
 
     // create table query in database
@@ -70,12 +70,12 @@ class KDatabase : SQLiteOpenHelper {
 
             if (cSor.moveToFirst()) {
                 do {
-                    val _id = cSor.getInt(cSor.getColumnIndexOrThrow(Description.cID))
-                    val _artist = cSor.getString(cSor.getColumnIndexOrThrow(Description.songArtist))
-                    val _title = cSor.getString(cSor.getColumnIndexOrThrow(Description.songTitle))
-                    val _songPath = cSor.getString(cSor.getColumnIndexOrThrow(Description.songPath))
+                    val id = cSor.getInt(cSor.getColumnIndexOrThrow(Description.cID))
+                    val artist = cSor.getString(cSor.getColumnIndexOrThrow(Description.songArtist))
+                    val title = cSor.getString(cSor.getColumnIndexOrThrow(Description.songTitle))
+                    val path = cSor.getString(cSor.getColumnIndexOrThrow(Description.songPath))
 
-                    _songList.add(Songs(_id.toLong(), _title, _artist, _songPath, 0))
+                    _songList.add(Songs(id.toLong(), title, artist, path, 0))
 
                 } while (cSor.moveToNext())
             } else {
