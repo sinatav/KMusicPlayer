@@ -50,8 +50,8 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
             android:background="#5c7e94"
             android:layout_alignParentLeft="true">
 
@@ -74,6 +74,12 @@
                     android:layout_marginTop="20dp"
                     android:layout_marginBottom="10dp"
                     android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:freezesText="true"
                     android:padding="5dp"
                     android:singleLine="true"
                     android:text="Castle of glass"
@@ -87,10 +93,16 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_centerHorizontal="true"
-                    android:layout_marginStart="160dp"
-                    android:layout_marginEnd="160dp"
+                    android:layout_marginStart="100dp"
+                    android:layout_marginEnd="100dp"
                     android:layout_marginBottom="0dp"
                     android:ellipsize="marquee"
+                    android:fadingEdge="horizontal"
+                    android:marqueeRepeatLimit="marquee_forever"
+                    android:scrollHorizontally="true"
+                    android:focusable="true"
+                    android:focusableInTouchMode="true"
+                    android:freezesText="true"
                     android:singleLine="true"
                     android:text="Linkin Park"
                     android:textColor="#eeeeee"
@@ -198,22 +210,7 @@
                     android:minHeight="0dp" />
 
             </RelativeLayout>
-            <!--
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_alignParentBottom="true"
-                android:
-                >
 
-                <SeekBar
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/volumeControlBar"
-                    />
-
-            </RelativeLayout>
-        -->
         </RelativeLayout>
 
     </LinearLayout>
