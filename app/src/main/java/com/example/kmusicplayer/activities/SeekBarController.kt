@@ -1,6 +1,7 @@
 package com.example.kmusicplayer.activities
 
 import android.widget.SeekBar
+import com.example.kmusicplayer.fragments.SongPlayingFragment
 
 class SeekBarController : SeekBar.OnSeekBarChangeListener {
     override fun onProgressChanged(p0: SeekBar?, p1: Int, p2: Boolean) {
@@ -9,12 +10,16 @@ class SeekBarController : SeekBar.OnSeekBarChangeListener {
     }
 
     override fun onStartTrackingTouch(p0: SeekBar?) {
-        TODO("not implemented")
-        //To change body of created functions use File | Settings | File Templates.
+        if (SongPlayingFragment.Statified.mediaPlayer == null)
+            return
     }
 
     override fun onStopTrackingTouch(p0: SeekBar?) {
-        TODO("not implemented")
-        //To change body of created functions use File | Settings | File Templates.
+        if (p0?.progress!! < SongPlayingFragment.Statified.mediaPlayer!!.duration) {
+            SongPlayingFragment.Statified.mediaPlayer!!.seekTo(p0.progress)
+        } else {
+            SongPlayingFragment.Statified.mediaPlayer?.
+                seekTo((SongPlayingFragment.Statified.mediaPlayer?.duration)!!.toInt())
+        }
     }
 }
