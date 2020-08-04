@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.*
 import android.widget.Switch
 import androidx.fragment.app.Fragment
+import com.example.kmusicplayer.R
 
 class SettingsFragment : Fragment() {
 
@@ -21,14 +22,13 @@ class SettingsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // TODO : create view using inflater
+
+        val view = inflater.inflate(R.layout.fragment_settings, container, false)
 
         activity?.title ?: "Settings"
 
-        // TODO : create shakeSwitch with formerly created view
-
-        // TODO : replace this with te right return
-        return super.onCreateView(inflater, container, savedInstanceState)
+        shakeSwitch = view?.findViewById(R.id.switchShake)
+        return view
     }
 
     override fun onAttach(context: Context) {
@@ -72,6 +72,10 @@ class SettingsFragment : Fragment() {
         }
     }
 
-    // TODO : override onCreateOptionsMenu
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        menu.clear()
+        inflater.inflate(R.menu.menu_blank, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
 
 }
