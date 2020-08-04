@@ -7,7 +7,7 @@ import android.view.*
 import android.widget.Switch
 import androidx.fragment.app.Fragment
 
-class Settings : Fragment() {
+class SettingsFragment : Fragment() {
 
     var myActivity: Activity? = null
     var shakeSwitch: Switch? = null
