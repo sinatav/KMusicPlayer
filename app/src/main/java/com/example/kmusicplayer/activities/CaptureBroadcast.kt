@@ -19,7 +19,9 @@ class CaptureBroadcast : BroadcastReceiver() {
             try {
                 if (SongPlayingFragment.Statified.mediaPlayer?.isPlaying as Boolean) {
                     SongPlayingFragment.Statified.mediaPlayer?.pause()
-                    SongPlayingFragment.Statified.playpauseImageButton?.setBackgroundResource(R.drawable.play_icon)
+                    SongPlayingFragment.Statified.playpauseImageButton?.setBackgroundResource(
+                        R.drawable.play_icon
+                    )
                 }
             } catch (e: Exception) {
                 e.printStackTrace()
