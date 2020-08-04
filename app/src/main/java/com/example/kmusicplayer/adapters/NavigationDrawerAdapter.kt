@@ -1,4 +1,4 @@
-package com.example.kmusicplayer.activities
+package com.example.kmusicplayer.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -9,6 +9,7 @@ import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.kmusicplayer.R
+import com.example.kmusicplayer.activities.MainActivity
 import com.example.kmusicplayer.fragments.FavoriteFragment
 import com.example.kmusicplayer.fragments.MainScreenFragment
 import com.example.kmusicplayer.fragments.SettingsFragment
@@ -66,7 +67,9 @@ class NavigationDrawerAdapter(_contentList:ArrayList<String>, _getImages: IntArr
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NavViewHolder {
         val itemView = LayoutInflater.from(parent.context)
             .inflate(R.layout.row_custom_navigationdrawer,parent,false)
-        return NavViewHolder(itemView)
+        return NavViewHolder(
+            itemView
+        )
     }
     override fun getItemCount(): Int {
         return 4
