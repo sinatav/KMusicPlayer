@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#809eb0">
+
+    <TextView
+        android:id="@+id/timeCD"
+        android:layout_width="122dp"
+        android:layout_height="62dp"
+        android:layout_marginTop="172dp"
+        android:text="00:00"
+        android:textSize="48dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/angry_btn"
+
+        android:layout_width="99dp"
+        android:layout_height="38dp"
+        android:layout_marginBottom="172dp"
+
+        android:background="@drawable/buttonshape"
+        android:shadowColor="#171717"
+        android:shadowDx="0"
+        android:shadowDy="0"
+        android:shadowRadius="5"
+        android:text="Sleep"
+        android:textColor="#ffffff"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeCD"
+        tools:ignore="MissingConstraints" />
+
+    <TextView
+        android:id="@+id/edit_text_input"
+
+        android:layout_width="65dp"
+        android:layout_height="20dp"
+        android:layout_marginTop="375dp"
+        android:hint="Minutes"
+        android:inputType="number"
+        android:maxLength="4"
+        app:layout_constraintBottom_toTopOf="@+id/timeCD"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/button_set"
+        android:layout_width="62dp"
+        android:layout_height="35dp"
+        android:layout_marginRight="95dp"
+        android:text="set"
+        android:textSize="12dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/edit_text_input"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="379dp" />
+</android.support.constraint.ConstraintLayout>
