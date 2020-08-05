@@ -5,8 +5,10 @@ import android.content.Context
 import android.os.Bundle
 import android.view.*
 import android.widget.Switch
-import androidx.fragment.app.Fragment
+//import androidx.fragment.app.Fragment
 import com.example.kmusicplayer.R
+import android.support.v4.app.Fragment
+
 
 class SettingsFragment : Fragment() {
 

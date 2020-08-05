@@ -10,14 +10,18 @@ import android.view.*
 import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.example.kmusicplayer.R
 import com.example.kmusicplayer.Songs
 import com.example.kmusicplayer.adapters.MainScreenAdapter
 import java.util.*
+import android.support.v4.app.Fragment
+import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
+import android.view.*
+import android.widget.*
+import java.util.*
+
 
 class MainScreenFragment : Fragment() {
     private var _mainScreenAdapter: MainScreenAdapter? = null

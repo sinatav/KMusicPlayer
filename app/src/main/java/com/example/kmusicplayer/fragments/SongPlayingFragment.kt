@@ -16,8 +16,8 @@ import android.widget.ImageButton
 import android.widget.SeekBar
 import android.widget.TextView
 import android.widget.Toast
-import androidx.core.content.ContextCompat
-import androidx.fragment.app.Fragment
+//import androidx.core.content.ContextCompat
+//import androidx.fragment.app.Fragment
 import com.cleveroad.audiovisualization.AudioVisualization
 import com.cleveroad.audiovisualization.DbmHandler
 import com.cleveroad.audiovisualization.GLAudioVisualizationView
@@ -29,6 +29,9 @@ import com.example.kmusicplayer.activities.SeekBarController
 import java.util.*
 import java.util.concurrent.TimeUnit
 import kotlin.math.sqrt
+import android.support.v4.app.Fragment
+import android.support.v4.content.ContextCompat
+
 
 class SongPlayingFragment : Fragment() {
 
@@ -416,7 +419,8 @@ class SongPlayingFragment : Fragment() {
         Statified.currentSongHelper?.isLoop = false
         Statified.currentSongHelper?.isShuffle = false
 
-        Statified.favoriteContent = KDatabase(Statified.myActivity)
+        Statified.favoriteContent =
+            KDatabase(Statified.myActivity)
 
         var path: String? = null
         var songTitle: String? = null
@@ -643,7 +647,8 @@ class SongPlayingFragment : Fragment() {
     }
 
     private fun seekBarHandler() {
-        val seekBarListener = SeekBarController()
+        val seekBarListener =
+            SeekBarController()
         Statified.seekbar?.setOnSeekBarChangeListener(seekBarListener)
     }
 

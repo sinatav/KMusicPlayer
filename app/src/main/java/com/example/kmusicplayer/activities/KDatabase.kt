@@ -45,7 +45,8 @@ class KDatabase : SQLiteOpenHelper {
     )
 
     constructor(context: Context?) : super(
-        context, Description.DB_Name, null,
+        context,
+        Description.DB_Name, null,
         Description.DB_Version
     )
 
@@ -75,7 +76,15 @@ class KDatabase : SQLiteOpenHelper {
                     val title = cSor.getString(cSor.getColumnIndexOrThrow(Description.songTitle))
                     val path = cSor.getString(cSor.getColumnIndexOrThrow(Description.songPath))
 
-                    _songList.add(Songs(id.toLong(), title, artist, path, 0))
+                    _songList.add(
+                        Songs(
+                            id.toLong(),
+                            title,
+                            artist,
+                            path,
+                            0
+                        )
+                    )
 
                 } while (cSor.moveToNext())
             } else {

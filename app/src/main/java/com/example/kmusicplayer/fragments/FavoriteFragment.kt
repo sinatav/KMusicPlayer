@@ -12,13 +12,19 @@ import android.view.ViewGroup
 import android.widget.ImageButton
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.DefaultItemAnimator
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+//import androidx.fragment.app.Fragment
+//import androidx.recyclerview.widget.DefaultItemAnimator
+//import androidx.recyclerview.widget.LinearLayoutManager
+//import androidx.recyclerview.widget.RecyclerView
 import com.example.kmusicplayer.R
 import com.example.kmusicplayer.Songs
 import com.example.kmusicplayer.activities.KDatabase
+import android.support.v4.app.Fragment
+import android.support.v7.widget.DefaultItemAnimator
+import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
+import kotlin.collections.ArrayList
+
 
 class FavoriteFragment : Fragment() {
 
@@ -217,7 +223,8 @@ class FavoriteFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        favoriteContent = KDatabase(myActivity)
+        favoriteContent =
+            KDatabase(myActivity)
         showSongsOnFav()
         bottomBarSetup()
 

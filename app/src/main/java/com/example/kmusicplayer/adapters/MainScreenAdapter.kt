@@ -7,11 +7,13 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.RelativeLayout
 import android.widget.TextView
-import androidx.fragment.app.FragmentActivity
-import androidx.recyclerview.widget.RecyclerView
+//import androidx.fragment.app.FragmentActivity
+//import androidx.recyclerview.widget.RecyclerView
 import com.example.kmusicplayer.R
 import com.example.kmusicplayer.Songs
 import com.example.kmusicplayer.fragments.SongPlayingFragment
+import android.support.v4.app.FragmentActivity
+import android.support.v7.widget.RecyclerView
 
 class MainScreenAdapter(_songDetails: ArrayList<Songs>, _context: Context)
     : RecyclerView.Adapter<MainScreenAdapter.MyViewHolder>() {
