@@ -23,6 +23,7 @@ import android.support.v4.app.Fragment
 import android.support.v7.widget.DefaultItemAnimator
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import com.example.kmusicplayer.adapters.FavoriteAdapter
 import kotlin.collections.ArrayList
 
 
@@ -46,14 +47,11 @@ class FavoriteFragment : Fragment() {
         var mediaPlayer: MediaPlayer? = null
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.fragment_favorite, container, false)
+    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?,
+                              savedInstanceState: Bundle?): View? {
+        val view = inflater!!.inflate(R.layout.fragment_favorite, container, false)
         setHasOptionsMenu(true)
-        activity!!.title = "Now Playing"
+        activity.title = "Now Playing"
         songTitle = view?.findViewById(R.id.songTitleFavScreen)
         recyclerView = view?.findViewById(R.id.favoriteRecycler)
         //these are the song details on the favorite part
@@ -152,10 +150,10 @@ class FavoriteFragment : Fragment() {
             args.putString("FavBottomBar", "success")
             songPlayingFragment.arguments = args       // linking songPlayingFragment to Bundle obj
 
-            fragmentManager?.beginTransaction()
-                ?.replace(R.id.details_fragment, songPlayingFragment)
-                ?.addToBackStack("SongPlayingFragment")
-                ?.commit()
+            fragmentManager.beginTransaction()
+                .replace(R.id.details_fragment, songPlayingFragment)
+                .addToBackStack("SongPlayingFragment")
+                .commit()
 
         }
 
@@ -193,13 +191,12 @@ class FavoriteFragment : Fragment() {
                 recyclerView?.visibility = View.INVISIBLE
                 noFavorites?.visibility = View.VISIBLE
             } else {
-//                val favoriteAdapter = FavoriteAdapter(rlist as ArrayList<Songs>,
-//                    myActivity as Context
-//                )
+                val favoriteAdapter = FavoriteAdapter(rlist as ArrayList<Songs>,
+                    myActivity as Context)
                 val mLayoutManager = LinearLayoutManager(activity)
                 recyclerView?.layoutManager = mLayoutManager
                 recyclerView?.itemAnimator = DefaultItemAnimator()
-//                recyclerView?.adapter = favoriteAdapter
+                recyclerView?.adapter = favoriteAdapter
                 recyclerView?.setHasFixedSize(true)
             }
         } else {
@@ -210,12 +207,12 @@ class FavoriteFragment : Fragment() {
     }
 
 
-    override fun onAttach(context: Context) {
+    override fun onAttach(context: Context?) {
         super.onAttach(context)
         myActivity = context as Activity
     }
 
-    override fun onAttach(activity: Activity) {
+    override fun onAttach(activity: Activity?) {
         super.onAttach(activity)
         myActivity = context as Activity
     }
@@ -223,10 +220,10 @@ class FavoriteFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
 
-        favoriteContent =
-            KDatabase(myActivity)
+        favoriteContent = KDatabase(myActivity)
         showSongsOnFav()
         bottomBarSetup()
 
     }
+
 }

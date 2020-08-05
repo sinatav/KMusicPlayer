@@ -52,8 +52,7 @@
             android:layout_height="match_parent"
             android:layout_alignParentStart="true"
             android:layout_alignParentTop="true"
-            android:background="#5c7e94"
-            android:layout_alignParentLeft="true">
+            android:background="#5c7e94">
 
             <RelativeLayout
                 android:id="@+id/information_song"
@@ -62,8 +61,7 @@
                 android:layout_alignParentEnd="true"
                 android:layout_marginStart="0dp"
                 android:layout_marginEnd="0dp"
-                android:layout_marginBottom="0dp"
-                android:layout_alignParentRight="true">
+                android:layout_marginBottom="0dp">
 
                 <TextView
                     android:id="@+id/songTitle"
